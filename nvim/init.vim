@@ -28,7 +28,8 @@ nnoremap <silent> <space>e :<C-u>CocList extensions<cr>
 nnoremap <silent> <space>c :<C-u>CocList commands<cr>
 
 
-Plug 'chrisbra/colorizer'
+Plug 'chrisbra/Colorizer'
+
 
 Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1
@@ -51,7 +52,7 @@ Plug 'vim-airline/vim-airline-themes'
 let g:airline_powerline_fonts = 1
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
-let g:airline_theme='ayu_mirage'
+let g:airline_theme='gruvbox'
 Plug 'preservim/nerdcommenter'
 Plug 'tpope/vim-surround'
 Plug 'machakann/vim-sandwich'
@@ -65,7 +66,6 @@ Plug 'preservim/nerdtree'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'gruvbox-community/gruvbox'
 Plug 'ayu-theme/ayu-vim'
-let ayucolor="dark" 
 Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
 set termguicolors    
 "let ayucolor="mirage"
@@ -73,6 +73,7 @@ let ayucolor="dark"
 call plug#end()
 
 "bindings""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <F4> !g++ -o solution question.cpp; ./solution < input.txt > output.txt
 nnoremap <C-j> :tabprevious<CR>                                                                            
 nnoremap <C-k> :tabnext<CR>
 nnoremap <silent> <C-l> :nohl<CR><C-l>
@@ -86,5 +87,5 @@ noremap <S-c> :CocList
 
 set wrap!
 set relativenumber
-colorscheme ayu
-"set bg=dark
+colorscheme gruvbox
+set bg=dark
