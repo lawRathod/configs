@@ -1,19 +1,32 @@
-#! /bin/bash
+#!/usr/bin/env bash
 
 function run {
-  if ! pgrep -f $1 ;
+  if ! pgrep -x $1 ;
   then
     $@&
   fi
 }
 
-run copyq
-run dunst
-run xss-lock -v -l xsecurelock
-run picom
-run nm-applet
 run pasystray
+run copyq
+run nm-applet --indicator
+run picom
+run caffeine
 run flameshot
-run "/home/law/apps/scripts/monitor.sh"
-run "/home/law/apps/scripts/laptop-right.sh"
-run nitrogen --restore &
+run blueberry-tray
+# run kitty -e lvim
+# run code
+run telegram-desktop
+run slack
+run brave
+
+# ~/.screenlayout/lg-ultrawide.sh
+
+light -I
+# dunst --config $HOME/.config/dunst/dunstrc &
+xss-lock -v -l xsecurelock &
+
+autorandr --load acer
+
+sleep 2
+nitrogen --restore
